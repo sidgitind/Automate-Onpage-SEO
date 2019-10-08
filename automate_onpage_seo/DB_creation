@@ -1,0 +1,60 @@
+CREATE TABLE `slugs` (
+  `id` int(11) NOT NULL,
+  `url_slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+ALTER TABLE `slugs`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `slugs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `slugs` ADD `Meta_title` VARCHAR(255) NOT NULL AFTER `title`, 
+ADD `Meta_description` VARCHAR(500) NOT NULL AFTER `Meta_title`, 
+ADD `Keywords` VARCHAR(500) NOT NULL AFTER `Meta_description`;
+
+ALTER TABLE `slugs` CHANGE `title` `title` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL;
+ALTER TABLE `slugs` CHANGE `Meta_title` `Meta_title` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL;
+ALTER TABLE `slugs` CHANGE `Meta_description` `Meta_description` VARCHAR(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL;
+ALTER TABLE `slugs` CHANGE `Keywords` `Keywords` VARCHAR(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL;
+
+INSERT INTO `slugs` (`id`, `url_slug`, `title`) VALUES
+(1, 'best-courses-to-learn-data-science', 'Data Science'),
+(2, 'best-courses-to-become-data-science-expert', 'Data Science'),
+(3, 'best-courses-to-learn-big-data', 'Big Data'),
+(4, 'best-courses-to-become-big-data-expert', 'Big Data'),
+(5, 'best-courses-to-learn-digital-marketing', 'Digital Marketing'),
+(6, 'best-courses-to-become-digital-marketing-expert', 'Digital Marketing'),
+(7, 'best-courses-to-learn-mobile-app-development', 'Mobility'),
+(8, 'best-courses-to-implement-digital-transformation', 'Digital Transformation'),
+(9, 'best-courses-to-learn-internet-of-things', 'IoT/M2M'),
+(10, 'best-courses-to-learn-iot', 'IoT/M2M'),
+(11, 'best-courses-to-learn-iot', 'IoT/M2M'),
+(12, 'best-courses-to-learn-cyber-security', 'Cyber Security'),
+(13, 'best-courses-to-become-cyber-security-expert', 'Cyber Security'),
+(14, 'best-courses-to-learn-cloud-computing', 'Cloud Computing'),
+(15, 'best-courses-to-become-cloud-computing-expert', 'Cloud Computing'),
+(16, 'become-mean-stack-developer', 'Web Development'),
+(17, 'learn-full-stack-development', 'Web Development'),
+(18, 'best-courses-to-learn-web-development', 'Web Development'),
+(19, 'best-courses-to-become-full-stack-developer', 'Web Development'),
+(20, 'learn-mean-stack-development', 'Web Development'),
+(21, 'best-courses-to-learn-devops', 'DevOps'),
+(22, 'best-courses-to-become-a-devops-expert', 'DevOps'),
+(23, 'become-agile-expert', 'Agile Scrum'),
+(24, 'best-courses-to-learn-agile', 'Agile Scrum'),
+(25, 'best-courses-to-learn-scrum', 'Agile Scrum'),
+(26, 'become-scrum-master', 'Agile Scrum'),
+(27, 'best-courses-to-learn-project-management', 'Project Management'),
+(28, 'become-a-project-manager', 'Project Management'),
+(29, 'best-courses-to-learn-machine-learning', 'Machine Learning'),
+(30, 'become-a-machine-learning-expert', 'Machine Learning'),
+(31, 'best-courses-to-learn-ai', 'Artificial Intelligence/AI'),
+(32, 'best-courses-to-learn-artificial-intelligence', 'Artificial Intelligence/AI'),
+(33, 'become-an-ai-expert', 'Artificial Intelligence/AI'),
+(34, 'become-an-artificial-intelligence-expert', 'Artificial Intelligence/AI'),
+(35, 'best-courses-to-learn-enterprise-network-design', 'Enterprise Network Design'),
+(36, 'best-courses-to-learn-automation', 'Automation'),
+(37, 'become-an-automation-expert', 'Automation'),
+(38, 'best-courses-to-microservices-architecture', 'Microservices'),
+(39, 'become-a-microservices-architecture-expert', 'Microservices');
